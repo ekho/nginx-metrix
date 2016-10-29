@@ -3,6 +3,7 @@ local exports = {}
 local version = require 'nginx-metrix.version'
 local lust = require 'Lust'
 local logger = require 'nginx-metrix.logger'
+local nginx = ngx
 
 local formats2headers = {
     ["text"] = "text/plain",
@@ -17,7 +18,7 @@ end
 
 local header_http_accept = function()
     local _accept = {}
-    local accept_headers = ngx.req.get_headers().accept
+    local accept_headers = nginx.req.get_headers().accept
     if accept_headers then
         for accept in string.gmatch(accept_headers, "%w+/%w+") do
             table.insert(_accept, accept)
@@ -30,7 +31,7 @@ end
 -- @return string
 local get_format = function()
     -- trying to get format from GET params
-    local uri_args = ngx.req.get_uri_args()
+    local uri_args = nginx.req.get_uri_args()
     if uri_args["format"] and formats2headers[uri_args["format"]] then
         return uri_args["format"]
     end
@@ -49,10 +50,10 @@ end
 -- @param content_type string
 ---
 local set_content_type_header = function(content_type)
-    if ngx.headers_sent then
+  if nginx.headers_sent then
         logger.warn('Can not set Content-type header because headers already sent')
     else
-        ngx.header.content_type = content_type or formats2headers[get_format()]
+    nginx.header.content_type = content_type or formats2headers[get_format()]
     end
 end
 
