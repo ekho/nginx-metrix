@@ -1,13 +1,13 @@
 package = 'nginx-metrix'
 version = '1.1.3-1'
 source = {
-  url = 'https://github.com/bankiru/nginx-metrix/archive/v1.1.3.tar.gz',
+  url = 'https://github.com/ekho/nginx-metrix/archive/v1.1.3.tar.gz',
   dir = 'nginx-metrix-1.1.3',
 }
 description = {
   summary    = 'Extended Nginx status and metrics.',
   detailed   = [[Extended Nginx status and metrics.]],
-  homepage   = 'https://github.com/bankiru/nginx-metrix/',
+  homepage   = 'https://github.com/ekho/nginx-metrix/',
   license    = 'MIT <http://opensource.org/licenses/MIT>',
   maintainer = 'Boris Gorbylev <ekho@ekho.name>',
 }

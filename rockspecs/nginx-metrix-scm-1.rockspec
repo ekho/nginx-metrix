@@ -1,14 +1,14 @@
 package = 'nginx-metrix'
 version = 'scm-1'
 source = {
-  url    = "git://github.com/bankiru/nginx-metrix.git",
+  url    = "git://github.com/ekho/nginx-metrix.git",
   branch = "master",
   dir    = 'nginx-metrix',
 }
 description = {
   summary    = 'Extended Nginx status and metrics.',
   detailed   = [[Extended Nginx status and metrics.]],
-  homepage   = 'https://github.com/bankiru/nginx-metrix/',
+  homepage   = 'https://github.com/ekho/nginx-metrix/',
   license    = 'MIT <http://opensource.org/licenses/MIT>',
   maintainer = 'Boris Gorbylev <ekho@ekho.name>',
 }
